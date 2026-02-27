@@ -1,4 +1,4 @@
-cantidad = int(input("¿cuantas personas desea ingresar "))
+cantidad = int(input("¿cuantas personas desea ingresar? "))
 for i in range(cantidad):
     print(f"ingresaste {cantidad} persona ")
 
@@ -7,7 +7,7 @@ nombre = input("¿cual es su nommbre? ")
 #validacion edad 
 while True:
     try:
-        edad = input("ingrese su edad")
+        edad = int(input("ingrese su edad "))
         if edad >= 15:
             print("puede seguir adelante ")
             break
@@ -45,7 +45,7 @@ if edad < 15 or conocimientos == "no":
 else:
     print("felicidades puede hacer parter del taller ") 
 
-    print("su proceso ha finalizado. ")  
+    print("su proceso ha finalizado. ")
         
 
 
