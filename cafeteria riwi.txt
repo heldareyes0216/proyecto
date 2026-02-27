@@ -20,6 +20,6 @@ gaseosas
 3. pepsi 2.30
 
 sodas y te
-1. hatsu
-2. mister te 
-3. te verde 
+1. hatsu 3.20
+2. mister te 4.50
+3. te verde 8.20
