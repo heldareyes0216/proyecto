@@ -1,4 +1,5 @@
 cantidad = int(input("¿cuantas personas desea ingresar? "))
+
 for i in range(cantidad):
     print(f"ingresaste {cantidad} persona ")
 
@@ -45,7 +46,7 @@ if edad < 15 or conocimientos == "no":
 else:
     print("felicidades puede hacer parter del taller ") 
 
-    print("su proceso ha finalizado. ")
+    print("su proceso ha finalizado. ") 
         
 
 
