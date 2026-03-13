@@ -110,6 +110,7 @@ while True:
 
     print(f"Total a pagar: {total}")
 
+
 #peluquería
 
     hora = int(input("Ingrese la hora de llegada (0 a 23): "))
@@ -137,3 +138,91 @@ while True:
           contador += 1
 
     print(f"Cantidad de productos que valen mas 100000: {contador}")
+
+#spa
+
+    servicio = input("¿qué servicio desea?: ").lower()
+
+    if servicio == "masaje":
+        print("servicio confirmado.")
+
+    elif servicio == "facial":
+        print("servicio confirmado.")
+
+    elif servicio == "manicure":
+        print("servicio confirmado.")
+
+    else:
+        print("no se encuentra disponible") 
+
+
+#academia de baile 
+    asistencia  = int(input("¿cuantas veces asististe a clases este mes?: "))
+
+    if asistencia < 5:
+       print("asitencia baja.")
+
+    elif 5 <= asistencia <= 8:
+        print("asistencia media.")
+
+    else:
+        print("asistencia alta.")  
+
+#heladeria varios clientes
+cono = 3000
+vaso = 4000
+banana_split = 9000
+
+total_vendido = 0
+cliente = 0
+
+cont_cono = 0
+cont_vaso = 0
+cont_banana = 0
+
+while True:
+    print("\n=== MENÚ ===")
+    print("1. cono $3000")
+    print("2. vaso $4000")
+    print("3. banana split $9000")
+
+    option = int(input("sleccione una opcion: "))
+    cantidad = int(input("que cantidad desea: "))
+   
+
+    if option == 1:
+        total = cono * cantidad 
+        cont_cono =+ cantidad
+
+    elif option == 2:
+        total = vaso * cantidad
+        cont_vaso =+ cantidad
+
+    elif option == 3:
+        total = banana_split * cantidad
+        cont_banana =+ cantidad 
+
+    else:
+        print("producto no valido")
+        continue
+
+    print("Total a pagar:", total)
+
+    total_vendido += total
+
+    cliente += 1
+
+    continuar = input("¿desea ingresar otro cliente (si/no)?: ")
+    if continuar.lower() == "no":
+        break 
+
+print("\n=== RESUMEN DEL DÍA ===")
+print("Total vendido:", total_vendido)
+print("Clientes atendidos:", cliente)
+
+if cont_cono > cont_vaso and cont_cono > cont_banana:
+    print("El producto más pedido fue: Cono")
+elif cont_vaso > cont_cono and cont_vaso > cont_banana:
+    print("El producto más pedido fue: Vaso")
+else:
+    print("El producto más pedido fue: Banana Split")     
