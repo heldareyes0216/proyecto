@@ -45,7 +45,7 @@ while True:
   nota3 = perdir_nota(3)
 
 #sacar el promedio
-  promedio = (nota1 * 0.6) + (nota2 * 0.2) + (nota3 * 0.2)
+  promedio = (nota1 * 0.6) + (nota2 * 0.2) + (nota3 * 0.2) 
 
 #resultado de notas 
   if promedio <= 49:
