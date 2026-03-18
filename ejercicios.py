@@ -316,40 +316,89 @@ while True:
     print("\n===RESUMEN DEL DIA===")
     print(f"\nTOTAL DEL DIA: {total_dia}")   
 
-    #cine control sala 
-niños = 0
-adultos = 0 
-adulto_mayor = 0
-cont_ingresos = 0 
-capacidad = 100
-
-print(f"capacidad disponible: {capacidad}")
-ingresos = int(input("Personas ingresadas: "))
-edad = int(input("Edad del cliente: "))
+#cine control sala 
+    niños = 0
+    adultos = 0 
+    adulto_mayor = 0
+    cont_ingresos = 0 
+    capacidad = 10
 
 
-if edad < 18:
-    niños += 1
-    print("Pertenece al grupo de niños")
+    while cont_ingresos < capacidad:
+        seguir = input("¿desea ingresar?(si/no): ").lower()
 
-elif 18 <= edad <= 59:
-    adultos += 1
-    print("Pertenece al grupo de adultos")
+        if seguir == "no":
+            break
 
-else:
-    adulto_mayor += 1
-    print("pertenece al grupo de adultos mayores")
+        edad = int(input("Edad del cliente: "))
 
-    cont_ingresos += ingresos
 
-    
-print("\n===RESUMEN DEL DIA===")
-print("Personas ingresadas", cont_ingresos)
-print("Total niños", niños)
-print("Total adultos", adultos)
-print("Total adultos mayores", adulto_mayor)
+        if edad < 18:
+            niños += 1
+            print("Pertenece al grupo de niños")
 
-if cont_ingresos == capacidad:
-    print("se llenó")
-else:
-    print("no se llenó")        
+        elif 18 <= edad <= 59:
+            adultos += 1
+            print("Pertenece al grupo de adultos")
+
+        else:
+            adulto_mayor += 1
+            print("pertenece al grupo de adultos mayores")
+
+        cont_ingresos += 1
+
+        
+    print("\n===RESUMEN DEL DIA===")
+    print("Personas ingresadas", cont_ingresos)
+    print("Total niños", niños)
+    print("Total adultos", adultos)
+    print("Total adultos mayores", adulto_mayor)
+
+    if cont_ingresos == capacidad:
+        print("se llenó")
+    else:
+        print("no se llenó") 
+
+#tienda de mascostas ventas 
+    alimento = 0
+    juguete = 0
+    accesorio = 0
+    cont_categoria = []
+
+    total_alimento = 0
+    total_juguete = 0
+    total_accesorio = 0
+
+    for i in range(3):
+
+        categoria = input("¿que desea llevar?: ").lower()
+        valor_compra = float(input("¿cuanto da su compra?: "))
+
+        if categoria == "alimento":
+            alimento += 1 
+            total_alimento += valor_compra
+            
+        elif categoria == "jueguete":
+            juguete += 1
+            total_juguete += valor_compra
+            
+        elif categoria == "accesorio":
+            accesorio += 1
+            total_accesorio += valor_compra
+            
+        else:
+            print("Seleccione una categoria disponible.")
+
+    print("\n=== RESUMEN ===")
+    print("ventas por categorias: ", total_alimento)
+    print("ventas por categorias: ", total_accesorio)
+    print("ventas por categorias: ", total_juguete)
+
+    if total_juguete > total_alimento and total_juguete > total_accesorio:
+        print("categoria juguete generó mas dinero")
+        
+    elif total_alimento > total_accesorio and total_alimento > total_accesorio:
+        print("categoria alimento generó mas dinero")
+
+    else:
+        print("categoria accesorio generó mas dinero")        
