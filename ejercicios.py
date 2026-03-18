@@ -25,7 +25,7 @@ for i in range(5):
     else:
         print("Eliga un sabor disponible.")    
 
-print("\n === RESULATDOS ===")
+print("\n === RESULTADOS ===")
 print("vainilla", vainilla)
 print("chocolate", chocolate)
 print("fresa", fresa)
@@ -169,60 +169,149 @@ while True:
         print("asistencia alta.")  
 
 #heladeria varios clientes
-cono = 3000
-vaso = 4000
-banana_split = 9000
+    cono = 3000
+    vaso = 4000
+    banana_split = 9000
 
-total_vendido = 0
-cliente = 0
+    total_vendido = 0
+    cliente = 0
 
-cont_cono = 0
-cont_vaso = 0
-cont_banana = 0
+    cont_cono = 0
+    cont_vaso = 0
+    cont_banana = 0
 
-while True:
-    print("\n=== MENÚ ===")
-    print("1. cono $3000")
-    print("2. vaso $4000")
-    print("3. banana split $9000")
+    while True:
+        print("\n=== MENÚ ===")
+        print("1. cono $3000")
+        print("2. vaso $4000")
+        print("3. banana split $9000")
 
-    option = int(input("sleccione una opcion: "))
-    cantidad = int(input("que cantidad desea: "))
+        option = int(input("sleccione una opcion: "))
+        cantidad = int(input("que cantidad desea: "))
    
 
-    if option == 1:
-        total = cono * cantidad 
-        cont_cono =+ cantidad
+        if option == 1:
+           total = cono * cantidad 
+           cont_cono =+ cantidad
 
-    elif option == 2:
-        total = vaso * cantidad
-        cont_vaso =+ cantidad
+        elif option == 2:
+            total = vaso * cantidad
+            cont_vaso =+ cantidad
 
-    elif option == 3:
-        total = banana_split * cantidad
-        cont_banana =+ cantidad 
+        elif option == 3:
+            total = banana_split * cantidad
+            cont_banana =+ cantidad 
 
+        else:
+            print("producto no valido")
+            continue
+
+        print("Total a pagar:", total)
+
+        total_vendido += total
+
+        cliente += 1
+
+        continuar = input("¿desea ingresar otro cliente (si/no)?: ")
+        if continuar.lower() == "no":
+           break 
+
+    print("\n=== RESUMEN DEL DÍA ===")
+    print("Total vendido:", total_vendido)
+    print("Clientes atendidos:", cliente)
+
+    if cont_cono > cont_vaso and cont_cono > cont_banana:
+        print("El producto más pedido fue: Cono")
+    elif cont_vaso > cont_cono and cont_vaso > cont_banana:
+        print("El producto más pedido fue: Vaso")
     else:
-        print("producto no valido")
-        continue
+        print("El producto más pedido fue: Banana Split") 
 
-    print("Total a pagar:", total)
+#Gimansio rendimiento semanal
+    bajo = 0
+    medio = 0 
+    alto =  0
 
-    total_vendido += total
+    for i in range(5):
 
-    cliente += 1
+      cliente = input("Ingrese su nombre: ")
 
-    continuar = input("¿desea ingresar otro cliente (si/no)?: ")
-    if continuar.lower() == "no":
-        break 
+      dias_asistidos = int(input("Ingrese numero de dias asitidos en la semana: "))
 
-print("\n=== RESUMEN DEL DÍA ===")
-print("Total vendido:", total_vendido)
-print("Clientes atendidos:", cliente)
+      minutos = int(input("Ingrese el promedio de minuto snetrenados a la semana: "))
 
-if cont_cono > cont_vaso and cont_cono > cont_banana:
-    print("El producto más pedido fue: Cono")
-elif cont_vaso > cont_cono and cont_vaso > cont_banana:
-    print("El producto más pedido fue: Vaso")
-else:
-    print("El producto más pedido fue: Banana Split")     
+      if dias_asistidos < 3:
+        bajo += 1
+        print(cliente, "Bajo compromiso")
+
+
+      elif 3 <= dias_asistidos <= 4:
+        medio += 1
+        print(cliente, "Compromiso medio")
+
+      elif 5 <= dias_asistidos:
+        alto += 1
+        print(cliente, "compromiso alto")
+
+    print("\n === RESULTADOS ===")
+    print("Bajo compromiso: ", bajo)
+    print("Compromiso medio: ", medio)
+    print("Compromiso bajo: ", bajo)  
+
+#cafeteria descuento
+    total_dia = 0
+
+    while True:
+        print("\n=== CLIENTE NUEVO ===")
+        inicio = input("presione 'enter' si desea continuar o escriba 'salir' si desa salir ").lower()
+        if inicio == "salir":
+           break
+
+        option = ""
+    
+
+        while option != "salir":
+            print("\n=== MENÚ ===")
+            print("1. cafe $4000")
+            print("2. capuchino $7000")
+            print("3. pastel $6000")
+            print("si desea salir digite 'salir'.")
+
+            option = input("Seleccione una opción: ").lower()
+
+            if option == "salir":
+               break
+
+            if option == "1":
+               precio = 4000
+               producto = "cafe"
+
+            elif option == "2":
+                precio = 7000
+                producto = "capuchino"
+
+            elif option == "3":
+                precio = 6000
+                producto = "pastel"
+   
+            else:
+                print("Error: ingrese un valor valido")
+                continue
+
+            cantidad = int(input("cantidad deseada: "))
+            subtotal = precio * cantidad
+            total_cliente += subtotal
+
+            print(f"\nsubtotal actual: {total_cliente}")
+
+        if total_cliente > 20000:
+           total_cliente *= 0.9
+           print("se le aplicó un descuento del 10%")  
+
+        print(f"\ntotal cliente: {total_cliente}")
+
+        total_dia += total_cliente
+
+    
+    print("\n===RESUMEN DEL DIA===")
+    print(f"\nTOTAL DEL DIA: {total_dia}")           
