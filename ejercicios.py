@@ -314,4 +314,42 @@ while True:
 
     
     print("\n===RESUMEN DEL DIA===")
-    print(f"\nTOTAL DEL DIA: {total_dia}")           
+    print(f"\nTOTAL DEL DIA: {total_dia}")   
+
+    #cine control sala 
+niños = 0
+adultos = 0 
+adulto_mayor = 0
+cont_ingresos = 0 
+capacidad = 100
+
+print(f"capacidad disponible: {capacidad}")
+ingresos = int(input("Personas ingresadas: "))
+edad = int(input("Edad del cliente: "))
+
+
+if edad < 18:
+    niños += 1
+    print("Pertenece al grupo de niños")
+
+elif 18 <= edad <= 59:
+    adultos += 1
+    print("Pertenece al grupo de adultos")
+
+else:
+    adulto_mayor += 1
+    print("pertenece al grupo de adultos mayores")
+
+    cont_ingresos += ingresos
+
+    
+print("\n===RESUMEN DEL DIA===")
+print("Personas ingresadas", cont_ingresos)
+print("Total niños", niños)
+print("Total adultos", adultos)
+print("Total adultos mayores", adulto_mayor)
+
+if cont_ingresos == capacidad:
+    print("se llenó")
+else:
+    print("no se llenó")        
