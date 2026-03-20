@@ -401,4 +401,48 @@ while True:
         print("categoria alimento generó mas dinero")
 
     else:
-        print("categoria accesorio generó mas dinero")        
+        print("categoria accesorio generó mas dinero") 
+
+
+#peluqueria agenda
+    total_dia = 0
+    cont_corte =  0
+    cont_cepillado = 0
+    cont_tintura = 0
+    cliente_corte =0
+    cliente_cepillado = 0
+    cliente_tintura = 0
+
+    for i in range(5):
+
+        cliente = input("ingrese su nombre: ")
+        servicio = input("ingrese el servcio solicitado(corte, cepillado, tintura): ")
+        valor = float(input("ingrese el valor pagado: "))
+
+        if servicio == "corte":
+            total_dia += valor
+            cont_corte += 1
+            cliente_corte += 1
+
+        elif servicio == "cepillado":
+            total_dia += valor
+            cont_cepillado += 1
+            cliente_cepillado += 1
+
+        elif servicio == "tintura":
+            total_dia += valor
+            cont_tintura += 1
+            cliente_tintura += 1
+
+    print("\n=== Resumen ====")
+    print("Total del dia:", total_dia)
+    print("Cantidad de clientes por corte:", cliente_corte )        
+    print("Cantidad de clientes por cepillado:", cliente_cepillado )
+    print("Cantidad de clientes por tintura:", cliente_tintura )       
+
+    if cont_tintura > cont_cepillado and cont_tintura > cont_corte:
+            print("Servicio mas solicitado: 'tintura' ")
+    elif cont_cepillado > cont_corte and cont_cepillado > cont_tintura:
+            print("sericio mas solicitado: 'cepillado' ")
+    else:
+            print("\nservicio mas solicitado: 'corte' ")        
